@@ -1,0 +1,60 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Cleaning Service App</title>
+      <script type="module" crossorigin src="/assets/index-DKMvOGI8.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-CNIbhcPf.css">
+    </head>
+
+    <body>
+      <div id="root"></div>
+
+      <!--Start of Tawk.to Script-->
+      <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6968b34f0f26dd197d659394/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+      </script>
+      <script type="text/javascript">
+        // Show Tawk.to widget only after navigating to main page
+        var checkTawkVisibility = function() {
+          if (window.Tawk_API && window.location.pathname === '/main') {
+            window.Tawk_API.showWidget();
+          } else if (window.Tawk_API) {
+            window.Tawk_API.hideWidget();
+          }
+        };
+
+        // Hide widget by default on load
+        Tawk_API.onLoad = function() {
+          Tawk_API.hideWidget();
+        };
+
+        // Check on route changes (for SPA)
+        window.addEventListener('popstate', checkTawkVisibility);
+
+        // Override pushState and replaceState to detect route changes
+        var originalPushState = history.pushState;
+        history.pushState = function() {
+          originalPushState.apply(this, arguments);
+          checkTawkVisibility();
+        };
+        var originalReplaceState = history.replaceState;
+        history.replaceState = function() {
+          originalReplaceState.apply(this, arguments);
+          checkTawkVisibility();
+        };
+      </script>
+      <!--End of Tawk.to Script-->
+    </body>
+  </html>
+  

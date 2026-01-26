@@ -1,0 +1,51 @@
+type User @table {
+  displayName: String!
+  email: String!
+  createdAt: Timestamp!
+  photoUrl: String
+  phoneNumber: String
+  userType: String
+}
+
+type Service @table {
+  name: String!
+  description: String!
+  price: Float!
+  durationMinutes: Int!
+  createdAt: Timestamp!
+  category: String
+  imageUrl: String
+  location: String
+  provider: User
+}
+
+type AvailabilitySlot @table {
+  service: Service!
+  provider: User!
+  startTime: Timestamp!
+  endTime: Timestamp!
+  isBooked: Boolean!
+  createdAt: Timestamp!
+  maxCapacity: Int
+}
+
+type Booking @table {
+  consumer: User!
+  service: Service!
+  availabilitySlot: AvailabilitySlot!
+  bookingTime: Timestamp!
+  status: String!
+  createdAt: Timestamp!
+  notes: String
+  totalPrice: Float
+}
+
+type Review @table {
+  consumer: User!
+  service: Service!
+  booking: Booking!
+  rating: Int!
+  createdAt: Timestamp!
+  comment: String
+  published: Boolean
+}
